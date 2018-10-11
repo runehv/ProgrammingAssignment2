@@ -1,13 +1,19 @@
-#Base function - Creating the cache matrix
+#This is my base function - 
+# Creating the cache matrix
 makeCacheMatrix <- function(x = matrix()) {
         inv <- Null
+        
+        #Create set function
         set <- function(y){
                 x <<- y
                 inv <<- Null
         }
+    #Create get function
         get <- function() {
                 print(x)
         }
+        
+     #Create setinv function
         setinv <- function(input){
                 inv <<- input
         }
@@ -33,6 +39,7 @@ cacheSolve <- function(x, ...) {
                 x$setinv(inv)
         } else {
                 return(inv())
-        }                
+        }         
+        #Printing inv
         print(inv)
 }
